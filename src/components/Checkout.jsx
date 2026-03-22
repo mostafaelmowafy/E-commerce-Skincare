@@ -224,6 +224,7 @@ function CheckoutPage() {
               <a
                 href={`https://wa.me/2${instapayNumber}?text=تم التحويل لطلب باسم ${document.getElementsByName("name")[0].value}`}
                 target="_blank"
+                rel="noreferrer"
                 className="bg-green-500 text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-green-600 transition"
               >
                 Send Receipt (WhatsApp) 💬
