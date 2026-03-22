@@ -18,7 +18,7 @@ function Product() {
   }
 
   return (
-    <div className="bg-gray-50 mnx-h-screen py-12 px-4">
+    <div className="bg-gray-50 min-h-screen py-12 px-4">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 sm:py-12 sm:px-8 ">
         <div>
           <img src={product.image} alt={product.name} />

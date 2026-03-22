@@ -8,11 +8,14 @@ import { CartProvider } from "./context/CartContext";
 import Checkout from "./components/Checkout";
 import Footer from "./components/Footer";
 import { Toaster } from "react-hot-toast";
+import WhatsAppButton from "./UI/WhatsAppButton";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
   return (
     <>
       <CartProvider>
+        <ScrollToTop />
         <Toaster position="top-center" reverseOrder={false} />
         <Header />
         <Routes>
@@ -27,6 +30,7 @@ function App() {
             }
           />
         </Routes>
+        <WhatsAppButton />
         <Footer />
       </CartProvider>
     </>
