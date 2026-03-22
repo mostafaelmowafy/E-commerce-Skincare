@@ -6,7 +6,7 @@ function Products() {
   const isSingleProduct = products.length === 1;
 
   return (
-    <div className="flex flex-col items-center gap-6 py-12 px-8 bg-gray-50/50">
+    <div className="flex flex-col items-center gap-6 py-12 px-8 bg-pink-50/50">
       <h1 className="text-3xl md:text-4xl font-bold mb-10 text-gray-800 tracking-tight">
         Our Products
       </h1>
