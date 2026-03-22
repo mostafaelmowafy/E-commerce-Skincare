@@ -30,7 +30,9 @@ function Product() {
           <p className="text-base md:text-lg mb-6 text-gray-600 text-left w-full ">
             {product.description}
           </p>
-          <p className="text-gray-900 font-bold mb-4">{product.price}</p>
+          <p className="text-gray-900 font-bold mb-4">
+            ${product.price.toFixed(2)} EGP
+          </p>
           <div className="flex flex-col lg:flex-row ">
             <button
               onClick={() => addToCart(product)}

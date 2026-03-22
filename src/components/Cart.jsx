@@ -49,7 +49,7 @@ export default function Cart() {
                 />
                 <div className="flex-grow text-right">
                   <h3 className="font-bold text-lg">{item.name}</h3>
-                  <p className="text-gray-500 text-sm">{item.price} EGP</p>
+                  <p className="text-gray-500 text-sm">${item.price} EGP</p>
                 </div>
                 <div className="flex items-center gap-3 bg-gray-100 rounded-lg p-1">
                   <div className="flex items-center gap-3 bg-gray-100 rounded-lg p-2">
@@ -86,16 +86,16 @@ export default function Cart() {
             <div className="space-y-3 border-b pb-4">
               <div className="flex justify-between">
                 <span>Subtotal</span>
-                <span>{subtotal} EGP</span>
+                <span>${subtotal.toFixed(2)} EGP</span>
               </div>
               <div className="flex justify-between text-gray-500 text-sm">
                 <span>Shipping</span>
-                <span>{Shipping} EGP</span>
+                <span>${Shipping.toFixed(2)} EGP</span>
               </div>
             </div>
             <div className="flex justify-between font-bold text-lg py-4">
               <span>Total</span>
-              <span className="text-brandPink">{formatPrice(total)} EGP</span>
+              <span className="text-brandPink">${formatPrice(total)} EGP</span>
             </div>
             <Link
               to="/checkout"

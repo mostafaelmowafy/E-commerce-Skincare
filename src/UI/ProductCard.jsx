@@ -31,7 +31,9 @@ function ProductCard({ product }) {
           {product.description}
         </p>
 
-        <p className="text-gray-900 font-bold mt-4 text-lg">{product.price}</p>
+        <p className="text-gray-900 font-bold mt-4 text-lg">
+          ${product.price.toFixed(2)} EGP
+        </p>
       </div>
 
       {/* قسم الزر: سيكون دائماً في الأسفل بسبب flex-grow في العنصر السابق */}
