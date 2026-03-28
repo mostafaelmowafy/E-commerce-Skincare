@@ -1,14 +1,14 @@
-import { FcOk } from "react-icons/fc";
-import { motion } from "framer-motion";
+// import { FcOk } from "react-icons/fc";
+// import { motion } from "framer-motion";
 
 function Banner() {
-  const features = [
-    "يدعم نمو الشعر",
-    "يحفز البصيلات",
-    "يحسن الدورة الدموية",
-    "تغذية عميقة",
-    "يقوي الشعر",
-  ];
+  // const features = [
+  //   "يدعم نمو الشعر",
+  //   "يحفز البصيلات",
+  //   "يحسن الدورة الدموية",
+  //   "تغذية عميقة",
+  //   "يقوي الشعر",
+  // ];
   // return (
   //   <div className="bg-gray-100 w-full font-cairo" dir="rtl">
   //     <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between overflow-hidden xl:px-14">
@@ -52,7 +52,7 @@ function Banner() {
   return (
     <div>
       <img
-        src="/banner.jpeg"
+        src="/banner.png"
         alt="Lumiere Hair Serum Banner"
         className="w-full h-auto object-cover"
       />
