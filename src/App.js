@@ -10,8 +10,25 @@ import { Toaster } from "react-hot-toast";
 import ScrollToTop from "./ScrollToTop";
 import NotFound from "./components/NotFound";
 import WhatsAppButton from "./UI/WhatsAppButton";
+import { useEffect } from "react";
+
+import ReactPixel from "react-facebook-pixel";
 
 function App() {
+  useEffect(() => {
+    // قراءة الـ ID من ملف الـ .env
+    const pixelId = process.env.REACT_APP_PIXEL_ID;
+
+    if (pixelId) {
+      const options = {
+        autoConfig: true,
+        debug: false,
+      };
+
+      ReactPixel.init(pixelId, null, options);
+      ReactPixel.pageView(); // تتبع زيارة الصفحة
+    }
+  }, []);
   return (
     <>
       <CartProvider>

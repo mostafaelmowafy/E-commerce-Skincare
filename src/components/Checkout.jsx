@@ -1,6 +1,7 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { MdLocalShipping } from "react-icons/md";
+import ReactPixel from "react-facebook-pixel";
 
 function CheckoutPage({ product, selectedOffer, packQuantity }) {
   const [errors, setErrors] = useState({});
@@ -63,6 +64,15 @@ function CheckoutPage({ product, selectedOffer, packQuantity }) {
         mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(orderData),
+      });
+
+      ReactPixel.track("Purchase", {
+        value: selectedOffer.price * packQuantity,
+        currency: "EGP",
+        content_name: product.name,
+        content_category: "Hair Care",
+        contents: [{ id: product.name, quantity: packQuantity }],
+        content_type: "product",
       });
 
       // بما أننا نستخدم no-cors والبيانات تصل بنجاح، ننفذ إجراءات النجاح هنا
