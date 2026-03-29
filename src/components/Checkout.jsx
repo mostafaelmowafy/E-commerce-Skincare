@@ -185,7 +185,7 @@ function CheckoutPage({ product, selectedOffer, packQuantity }) {
               <input
                 name="address"
                 type="text"
-                placeholder="العنوان بالتفصيل (محافظة - مدينة/قرية - شارع - عمارة/بيت - شقة)"
+                placeholder="العنوان بالتفصيل (منطقة - اسم الشارع - علامة مميزة - رقم العقار)"
                 className="w-full p-4 border rounded-xl outline-slate-600"
               />
               {errors.address && (
