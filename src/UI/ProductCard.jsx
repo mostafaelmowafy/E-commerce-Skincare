@@ -10,7 +10,7 @@ function ProductCard({ product }) {
   // عدد المجموعات (Packs) المطلوبة من العرض المختار
   const [packQuantity, setPackQuantity] = useState(1);
 
-  const orderItem = {
+  const currentOrderItem = {
     id: product.id,
     name: product.name,
     image: product.image,
@@ -128,7 +128,12 @@ function ProductCard({ product }) {
           </div>
         </div>
 
-        <CheckoutPage orderItems={[orderItem]} />
+        <CheckoutPage
+          // نمرر القيم مباشرة لضمان أن CheckoutPage يراها وهي تتغير
+          product={product}
+          selectedOffer={selectedOffer}
+          packQuantity={packQuantity}
+        />
       </div>
       <div
         className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 text-center font-cairo"
