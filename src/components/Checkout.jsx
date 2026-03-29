@@ -111,7 +111,7 @@ function CheckoutPage({ product, selectedOffer, packQuantity }) {
               <input
                 name="phone"
                 type="tel"
-                placeholder="رقم الهاتف"
+                placeholder="رقم الهاتف (عليه واتساب للتأكيد)"
                 className="w-full p-4 border rounded-xl outline-slate-600 text-right"
               />
               {errors.phone && (
@@ -124,7 +124,7 @@ function CheckoutPage({ product, selectedOffer, packQuantity }) {
               <input
                 name="otherPhone"
                 type="tel"
-                placeholder="رقم هاتف بديل (اختياري)"
+                placeholder="رقم هاتف بديل (لسهولة التأكيد اختياري)"
                 className="w-full p-4 border rounded-xl outline-slate-600 text-right"
               />
             </div>
@@ -185,7 +185,7 @@ function CheckoutPage({ product, selectedOffer, packQuantity }) {
               <input
                 name="address"
                 type="text"
-                placeholder="العنوان بالتفصيل (اسم الشارع / رقم العقار)"
+                placeholder="العنوان بالتفصيل (محافظة - مدينة/قرية - شارع - عمارة/بيت - شقة)"
                 className="w-full p-4 border rounded-xl outline-slate-600"
               />
               {errors.address && (
