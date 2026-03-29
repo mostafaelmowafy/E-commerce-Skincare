@@ -10,17 +10,6 @@ function ProductCard({ product }) {
   // عدد المجموعات (Packs) المطلوبة من العرض المختار
   const [packQuantity, setPackQuantity] = useState(1);
 
-  const currentOrderItem = {
-    id: product.id,
-    name: product.name,
-    image: product.image,
-    offerLabel: selectedOffer.label,
-    singlePackPrice: selectedOffer.price,
-    packQuantity: packQuantity,
-    totalPrice: selectedOffer.price * packQuantity,
-    totalPieces: Number(selectedOffer.quantity) * Number(packQuantity),
-  };
-
   const features = [
     {
       icon: <MdVerified className="text-green-500 text-2xl" />,
