@@ -61,7 +61,7 @@ function ProductCard({ product }) {
 
         {/* السعر الحالي + شحن مجاني */}
         <div className="flex items-center gap-3 my-3">
-          <span className="text-2xl font-black text-brandPink">
+          <span className="text-2xl font-black text-slate-800">
             {selectedOffer.price * packQuantity} جنية
           </span>
           <span className="text-emerald-600 font-bold text-[10px] bg-emerald-50 px-2 py-1 rounded-full border border-emerald-100 animate-pulse">
@@ -79,7 +79,7 @@ function ProductCard({ product }) {
               key={offer.id}
               className={`flex items-center justify-between p-3 border-2 rounded-xl cursor-pointer transition-all ${
                 selectedOffer.id === offer.id
-                  ? "border-brandPink bg-pink-50"
+                  ? "border-slate-600 bg-slate-100"
                   : "border-gray-100 hover:border-gray-200"
               }`}
             >
@@ -89,10 +89,10 @@ function ProductCard({ product }) {
                   name={`offer-${product.id}`}
                   checked={selectedOffer.id === offer.id}
                   onChange={() => setSelectedOffer(offer)}
-                  className="w-4 h-4 accent-brandPink"
+                  className="w-4 h-4 accent-slate-600"
                 />
                 <span
-                  className={`ml-3 text-sm font-bold ${selectedOffer.id === offer.id ? "text-brandPink" : "text-gray-600"}`}
+                  className={`ml-3 text-sm font-bold ${selectedOffer.id === offer.id ? "text-slate-700" : "text-gray-600"}`}
                 >
                   {offer.label}
                 </span>
