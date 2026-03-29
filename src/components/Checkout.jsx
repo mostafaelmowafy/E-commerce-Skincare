@@ -62,7 +62,7 @@ function CheckoutPage({ orderItems }) {
                 name="name"
                 type="text"
                 placeholder="الاسم الكامل"
-                className="w-full p-4 border rounded-xl outline-brandPink"
+                className="w-full p-4 border rounded-xl outline-slate-600"
               />
               {errors.name && (
                 <p className="text-red-500 text-sm mt-1">{errors.name}</p>
@@ -75,7 +75,7 @@ function CheckoutPage({ orderItems }) {
                 name="phone"
                 type="tel"
                 placeholder="رقم الهاتف"
-                className="w-full p-4 border rounded-xl outline-brandPink text-right"
+                className="w-full p-4 border rounded-xl outline-slate-600 text-right"
               />
               {errors.phone && (
                 <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
@@ -88,7 +88,7 @@ function CheckoutPage({ orderItems }) {
                 name="otherPhone"
                 type="tel"
                 placeholder="رقم هاتف بديل"
-                className="w-full p-4 border rounded-xl outline-brandPink text-right"
+                className="w-full p-4 border rounded-xl outline-slate-600 text-right"
               />
             </div>
 
@@ -98,7 +98,7 @@ function CheckoutPage({ orderItems }) {
                 name="governorate"
                 type="text"
                 placeholder="المحافظة"
-                className="w-full p-4 border rounded-xl outline-brandPink"
+                className="w-full p-4 border rounded-xl outline-slate-600"
               />
               {errors.governorate && (
                 <p className="text-red-500 text-sm mt-1">
@@ -113,7 +113,7 @@ function CheckoutPage({ orderItems }) {
                 name="address"
                 type="text"
                 placeholder="العنوان بالتفصيل"
-                className="w-full p-4 border rounded-xl outline-brandPink"
+                className="w-full p-4 border rounded-xl outline-slate-600"
               />
               {errors.address && (
                 <p className="text-red-500 text-sm mt-1">{errors.address}</p>
@@ -132,7 +132,7 @@ function CheckoutPage({ orderItems }) {
 
           <button
             type="submit"
-            className="w-full py-5 bg-brandPink text-white rounded-2xl font-black text-xl shadow-xl hover:bg-black transition-all"
+            className="w-full py-5 bg-slate-600 text-white rounded-2xl font-black text-xl shadow-xl hover:bg-slate-700 transition-all"
           >
             أطلب الأن - والدفع عند الاستلام
           </button>

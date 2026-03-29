@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <div>
-      <footer className=" text-blue-950 py-6 bg-gray-50 font-cairo">
+      <footer className=" text-blue-950 py-6 bg-orange-50 font-cairo">
         <div className="container mx-auto text-center mb-6">
           <Link
             to="/"

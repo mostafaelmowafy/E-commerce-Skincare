@@ -38,7 +38,7 @@ function ProductCard({ product }) {
 
   return (
     <div
-      className="flex flex-col h-full bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow text-right font-cairo"
+      className="flex flex-col h-full bg-white shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow text-right font-cairo"
       dir="rtl"
     >
       {/* الصورة */}

@@ -14,27 +14,38 @@ function Products() {
 
   const faqs = [
     {
-      question: "هل المنتج آمن؟",
+      question: " ❓ هل المنتج آمن؟",
       answer: "نعم، آمن ومجرب ومناسب للاستخدام اليومي.",
     },
     {
-      question: "امتى أشوف نتيجة؟",
-      answer: "في خلال 1- 4 أسابيع حسب الحالة.",
+      question: "❓ ينفع أستخدمه على الدقن؟",
+      answer:
+        "طبعًا - البصيلات في الدقن تستجيب بسرعة عالية جدًا للتحفيز + التغذية.",
     },
     {
-      question: "هل بيرجع الشعر بعد ما يقع؟",
+      question: "❓ هل بيرجع الشعر بعد ما يقع؟",
       answer: "نعم، المنتج بيحفّز البصيلات على الإنبات من جديد.",
     },
+    {
+      question: "❓ قد إيه وتبان نتيجة؟",
+      answer:
+        "– 2–4 أسابيع: توقف تساقط – 4–6 أسابيع: بداية إنبات – 6–10 أسابيع: كثافة واتّساق",
+    },
+    {
+      question: "❓ ينفع للرجالة والسيدات؟",
+      answer: "أيوه - آمن للجميع.",
+    },
+    {
+      question: "❓ ينفع أوقفه بعد ما الشعر يرجع؟",
+      answer:
+        "طبعًا - لما البصيلة تقوى وتشتغل طبيعي، مش مطلوب استخدام يومي بعدها.",
+    },
   ];
-
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <div
-      className="flex flex-col items-center gap-6 font-cairo mx-auto "
-      dir="rtl"
-    >
-      <div className=" max-w-6xl p-8 flex flex-col items-start gap-4 md:gap-6 md:w-2/3 text-right ">
+    <div className="flex flex-col items-center font-cairo mx-auto " dir="rtl">
+      <div className=" max-w-2xl p-8 flex flex-col items-start gap-4 md:gap-6 md:w-2/3 text-right ">
         <h1 className="text-3xl font-bold mb-4 text-black leading-tight">
           شعر أقوى يبدأ من الجذور
         </h1>
@@ -57,14 +68,14 @@ function Products() {
               .getElementById("checkout-form")
               ?.scrollIntoView({ behavior: "smooth" });
           }}
-          className="w-full mt-4 px-6 py-2 bg-pink-500 text-white font-bold rounded-lg hover:bg-pink-600 transition"
+          className="w-full mt-4 px-6 py-2 bg-slate-600 text-white font-bold rounded-lg hover:bg-slate-700 transition"
         >
           أطلب الآن - والدفع عند الاستلام
         </button>
       </div>
 
       <div
-        className="w-full max-w-6xl mx-auto p-6 bg-orange-50/50 shadow-lg border border-orange-200 font-cairo"
+        className="w-full max-w-2xl mx-auto p-6 bg-orange-50/50 shadow-lg border border-orange-200 font-cairo"
         dir="rtl"
       >
         <h2 className="text-3xl font-bold mb-10 text-gray-800 tracking-tight">
@@ -97,15 +108,15 @@ function Products() {
                   .getElementById("checkout-form")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="w-full mt-4 px-6 py-2 bg-pink-500 text-white font-bold rounded-lg hover:bg-pink-600 transition"
+              className="w-full mt-4 px-6 py-2 bg-slate-600 text-white font-bold rounded-lg hover:bg-slate-700 transition"
             >
               أطلب الآن - والدفع عند الاستلام
             </button>
           </div>
         </div>
       </div>
-      <div className="w-full max-w-2xl ">
-        <div className="bg-white rounded-3xl shadow-2xl shadow-pink-100/50 border border-gray-100 overflow-hidden">
+      <div className="w-full max-w-2xl  ">
+        <div className="bg-white shadow-2xl shadow-pink-100/50 border border-gray-100 overflow-hidden">
           <ProductCard product={products[0]} />
         </div>
 
@@ -125,7 +136,7 @@ function Products() {
             <div key={index} className="border-b pb-3">
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full flex justify-between items-center text-right font-bold text-gray-700 hover:text-brandPink transition"
+                className="w-full flex justify-between items-center text-right font-bold text-gray-700 hover:text-orange-300 transition"
               >
                 {faq.question}
                 <span>{openIndex === index ? "−" : "+"}</span>

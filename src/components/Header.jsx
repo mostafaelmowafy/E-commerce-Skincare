@@ -9,7 +9,7 @@ function Header() {
         initial={{ y: -100, opacity: 0 }} // يبدأ من فوق ومخفي
         animate={{ y: 0, opacity: 1 }} // ينزل لمكانه ويظهر
         transition={{ duration: 0.5, ease: "easeOut" }} // مدة الحركة
-        className="bg-pink-400/80 py-2 text-sm text-gray-50 flex items-center justify-center gap-2"
+        className="bg-slate-600/80 py-2 text-sm text-gray-50 flex items-center justify-center gap-2"
         dir="rtl"
       >
         <span className="text-2xl text-blue-50 animate-pulse">
