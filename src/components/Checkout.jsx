@@ -32,7 +32,7 @@ function CheckoutPage({ product, selectedOffer, packQuantity }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formElement = e.target; // تخزين مرجع الفورم
+    const formElement = e.target;
     const formData = new FormData(formElement);
     const newErrors = validateForm(formData);
 
@@ -44,49 +44,56 @@ function CheckoutPage({ product, selectedOffer, packQuantity }) {
     setLoading(true);
     setErrors({});
 
-    // تجهيز البيانات بناءً على الاختيارات الحالية للمستخدم
     const orderData = {
       name: formData.get("name"),
       phone: formData.get("phone"),
       otherPhone: formData.get("otherPhone") || "لا يوجد",
       governorate: formData.get("governorate"),
       address: formData.get("address"),
-      products: `${product.name} - العرض: (${selectedOffer.label}) - الكمية: (${packQuantity} مجموعات)`,
+
+      // هنا التعديل: إضافة packQuantity لتوضيح عدد المجموعات المطلوبة من هذا العرض
+      products: `${product.name} | العرض: (${selectedOffer.label}) | الكمية المطلوبة: (${packQuantity} مجموعات)`,
+
+      // حساب الإجمالي النهائي
       total: selectedOffer.price * packQuantity + " EGP",
     };
 
     try {
       const scriptURL =
-        "https://script.google.com/macros/s/AKfycbzZ3h6n2l2Urs3SnkSRjY_LjzRrqTf0bhbQmRMvyrZ-l_vXrY7potmHUIj7O3EvuBGm8Q/exec";
+        "https://script.google.com/macros/s/AKfycbz3O34Jt_uvpa2y3AdwoYPvqZvJ7l-2AwKQwSFNzlD0AhZRyZ41lTY0rZwISIQnLV2Q/exec";
 
-      await fetch(scriptURL, {
+      // ملاحظة: أزلنا no-cors وأضفت تعامل مع الـ Redirect
+      const response = await fetch(scriptURL, {
         method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(orderData),
       });
 
-      ReactPixel.track("Purchase", {
-        value: selectedOffer.price * packQuantity,
-        currency: "EGP",
-        content_name: product.name,
-        content_category: "Hair Care",
-        contents: [{ id: product.name, quantity: packQuantity }],
-        content_type: "product",
-      });
+      // جوجل سكريبت غالباً بيعمل Redirect (كود 302)
+      // لو الـ response.ok بـ true، يعني البيانات وصلت يقيناً
+      if (response.ok || response.type === "opaque") {
+        // كود الفيس بوك بيكسل
+        if (window.fbq) {
+          ReactPixel.track("Purchase", {
+            value: selectedOffer.price * packQuantity,
+            currency: "EGP",
+            content_name: product.name,
+          });
+        }
 
-      // بما أننا نستخدم no-cors والبيانات تصل بنجاح، ننفذ إجراءات النجاح هنا
-      toast.success("تم استلام طلبك بنجاح! شكراً لثقتك بنا ✨", {
-        duration: 5000,
-        style: { background: "#333", color: "#fff" },
-      });
-
-      formElement.reset(); // مسح الفورم بعد النجاح
+        toast.success("تم استلام طلبك بنجاح! شكراً لثقتك بنا ✨", {
+          duration: 5000,
+        });
+        formElement.reset();
+      } else {
+        throw new Error("السيرفر لم يستجب بشكل صحيح");
+      }
     } catch (error) {
       console.error("Submission error:", error);
-      toast.error("عذراً، حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى.");
+      toast.error(
+        "❌ فشل إرسال الطلب. تأكد من اتصالك بالإنترنت وحاول مرة أخرى.",
+      );
     } finally {
-      setLoading(false); // إعادة الزر لحالته الطبيعية
+      setLoading(false);
     }
   };
 
