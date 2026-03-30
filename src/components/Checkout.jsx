@@ -22,6 +22,12 @@ function CheckoutPage({ product, selectedOffer, packQuantity }) {
         "❌ من فضلك أدخل رقم هاتف صحيح يبدأ بـ 010 - 011 - 015 - 0127 - 0128 - 0120 - 0121 ويتكون من 11 رقم";
     }
 
+    const otherPhone = (formData.get("otherPhone") || "").trim();
+    if (otherPhone && !phoneRegex.test(otherPhone)) {
+      newErrors.otherPhone =
+        "❌ من فضلك أدخل رقم هاتف بديل صحيح يبدأ بـ 010 - 011 - 015 - 0127 - 0128 - 0120 - 0121 ويتكون من 11 رقم";
+    }
+
     if (!formData.get("governorate"))
       newErrors.governorate = "يجب إدخال المحافظة";
     if (!formData.get("address"))
@@ -144,6 +150,9 @@ function CheckoutPage({ product, selectedOffer, packQuantity }) {
                 placeholder="رقم هاتف بديل (لسهولة التأكيد اختياري)"
                 className="w-full p-4 border rounded-xl outline-slate-600 text-right"
               />
+              {errors.otherPhone && (
+                <p className="text-red-500 text-sm mt-1">{errors.otherPhone}</p>
+              )}
             </div>
 
             {/* المحافظة - قائمة منسدلة */}
