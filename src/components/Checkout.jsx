@@ -136,6 +136,7 @@ function CheckoutPage({ product, selectedOffer, packQuantity }) {
                 type="tel"
                 placeholder="رقم الهاتف (عليه واتساب للتأكيد)"
                 className="w-full p-4 border rounded-xl outline-slate-600 text-right"
+                maxLength={11}
               />
               {errors.phone && (
                 <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
@@ -149,6 +150,7 @@ function CheckoutPage({ product, selectedOffer, packQuantity }) {
                 type="tel"
                 placeholder="رقم هاتف بديل (لسهولة التأكيد اختياري)"
                 className="w-full p-4 border rounded-xl outline-slate-600 text-right"
+                maxLength={11}
               />
               {errors.otherPhone && (
                 <p className="text-red-500 text-sm mt-1">{errors.otherPhone}</p>
