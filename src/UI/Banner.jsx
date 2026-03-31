@@ -52,7 +52,7 @@ function Banner() {
   return (
     <div>
       <img
-        src="/banner.png"
+        src="/banner.webp"
         alt="Lumiere Hair Serum Banner"
         className="w-full h-auto object-cover"
       />
