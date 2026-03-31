@@ -31,7 +31,7 @@ function CheckoutPage({ product, selectedOffer, packQuantity }) {
         "❌ من فضلك أدخل رقم هاتف صحيح يبدأ بـ 010 - 011 - 015 - 0127 - 0128 - 0120 - 0121 ويتكون من 11 رقم";
     }
 
-    let rawOtherPhone = (formData.get("phone") || "").trim();
+    let rawOtherPhone = (formData.get("otherPhone") || "").trim();
 
     const otherPhone = convertArabicNumsToEnglish(rawOtherPhone);
 
