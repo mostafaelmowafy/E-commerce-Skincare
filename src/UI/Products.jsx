@@ -93,7 +93,7 @@ function Products() {
 
           <div>
             <img
-              src="/before-after1.jpeg"
+              src="/before-after1.webp"
               alt="Before and After Hair Growth Serum"
               className="w-full rounded-lg shadow-md border border-gray-200 mt-10"
             />
@@ -103,7 +103,7 @@ function Products() {
               الاستخدام.
             </p>
             <img
-              src="/before-after2.jpeg"
+              src="/before-after2.webp"
               alt="Before and After Hair Growth Serum"
               className="w-full rounded-lg shadow-md border border-gray-200 mt-10"
             />
